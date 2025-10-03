@@ -1,15 +1,19 @@
-import { GiCoffeeCup } from "react-icons/gi";
+"use client";
+
+import { usePathname } from "next/navigation";
 import { CiSearch } from "react-icons/ci";
 import { BsCartCheck } from "react-icons/bs";
+import LogoKonis from "../components/LogoKonis"
 
 export default function MainHeader(){
+    const pathname = usePathname();
+    if (["/login", "/register"].includes(pathname)) {
+        return null;
+    }
     return(
         <div className="flex fixed text-lg top-0 w-full justify-between py-4 px-20 text-white bg-[#0B090921]">
             <div className="flex gap-4 items-center">
-                <button className="flex gap-2 text-2xl">
-                    <GiCoffeeCup className=""/>
-                    <span className="font-sacramento">Kopi Manis</span>
-                </button>
+                <LogoKonis/>
                 <button>
                     Home
                 </button>

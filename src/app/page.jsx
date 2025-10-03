@@ -4,6 +4,10 @@ import Home2 from "../../public/img/home2.jpg";
 import MainCard from "../components/MainCard"
 import { FaCheckCircle } from "react-icons/fa";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
+import { FaStar } from "react-icons/fa";
+import { GoArrowLeft } from "react-icons/go";
+import { GoArrowRight } from "react-icons/go";
+import { FaCircle } from "react-icons/fa";
 
 export default function Home() {
   const dataMenu = [{
@@ -30,6 +34,12 @@ export default function Home() {
       desc: "You can explore the menu that we provide with fun and have their own taste and make your day better.",
       price: 20000
     }]
+
+  const dataTestimonial = [{
+    image: "/img/joko.jpg",
+    name: "Joko",
+    testi: `“Wow... I am very happy to spend my whole day here. the Wi-fi is good, and the coffee and meals tho. I like it here!! Very recommended!"`
+  },]
   return (
     <div className="flex flex-col">
       <section className="flex min-h-screen w-full">
@@ -118,9 +128,32 @@ export default function Home() {
         <p>You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
         <div className="w-2/3 bg-contain bg-no-repeat bg-[url('/img/Huge_Global.png')] h-[586px]"></div>
       </section>
-      <section className="bg-linear-to-b from-[#777C82] to-[#0B0909] w-full flex gap-2 justify-center py-12">
+      <section className="bg-linear-to-b from-[#777C82] to-[#0B0909] w-full flex gap-4 justify-center text-white py-12">
         <div className="h-[500px] bg-cover bg-no-repeat bg-[url('/img/joko.jpg')] w-[578px]"></div>
-        <div></div>
+        <div className="flex flex-col gap-4 w-[578px]">
+          <h1>TESTIMONIAL</h1>
+          <span className="text-5xl border-l-6 border-primary pl-6">{dataTestimonial[0].name}</span>
+          <span className="text-primary">Manager Kopi Manis</span>
+          <p className="">{dataTestimonial[0].testi}</p>
+          <div className="flex gap-2 text-primary items-center">
+            <FaStar />
+            <FaStar />
+            <FaStar />
+            <FaStar />
+            <FaStar />
+            <span className="text-white">5.0</span>
+          </div>
+          <div className="text-black flex gap-2">
+            <button className="bg-white p-2 rounded-full text-2xl"><GoArrowLeft /></button>
+            <button className="bg-primary p-2 rounded-full text-2xl"><GoArrowRight /></button>
+          </div>
+          <div className="text-white flex gap-2 text-sm">
+            <FaCircle className="text-primary"/>
+            <FaCircle />
+            <FaCircle />
+            <FaCircle />
+          </div>
+        </div>
       </section>
     </div>
   );
