@@ -1,10 +1,35 @@
 import Image from "next/image";
 import Home1 from "../../public/img/home1.jpg";
 import Home2 from "../../public/img/home2.jpg";
+import MainCard from "../components/MainCard"
 import { FaCheckCircle } from "react-icons/fa";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 
 export default function Home() {
+  const dataMenu = [{
+    image: "/img/menu1.jpg",
+    title: "Hazelnut Latte",
+    desc: "You can explore the menu that we provide with fun and have their own taste and make your day better.",
+    price: 20000
+  },
+  {
+      image: "/img/menu2.png",
+      title: "Hazelnut Latte",
+      desc: "You can explore the menu that we provide with fun and have their own taste and make your day better.",
+      price: 20000
+    },
+  {
+      image: "/img/menu3.png",
+      title: "Hazelnut Latte",
+      desc: "You can explore the menu that we provide with fun and have their own taste and make your day better.",
+      price: 20000
+    },
+  {
+      image: "/img/menu4.png",
+      title: "Hazelnut Latte",
+      desc: "You can explore the menu that we provide with fun and have their own taste and make your day better.",
+      price: 20000
+    }]
   return (
     <div className="flex flex-col">
       <section className="flex min-h-screen w-full">
@@ -42,9 +67,9 @@ export default function Home() {
           </button>
         </div>
       </section>
-      <section className="w-full h-[574px] flex">
+      <section className="w-full h-[800px] flex">
+      {/* <section className="w-full h-[574px] flex"> */}
         <div className="w-1/2 justify-center flex flex-col gap-4 px-58">
-          {/* <h1 className="text-5xl pl-6 border-l-8 border-primary">We Provide <span className="text-secondary">Good Coffee</span> and <span className="text-secondary">Healthy Meals</span></h1> */}
           <h1 className="relative text-5xl pl-6 
               before:content-[''] before:absolute before:left-0 before:top-1/3
               before:h-1/3 before:w-2 before:bg-primary">
@@ -72,6 +97,30 @@ export default function Home() {
         </div>
         <div className="w-1/2 bg-cover bg-[center_-150px] bg-no-repeat bg-[url('/img/home2.jpg')] h-full">
         </div>
+      </section>
+      <section className="flex flex-col gap-6 justify-center items-center mt-8">
+        <h1 className="relative text-5xl pb-6
+            after:content-[''] after:absolute after:left-1/3 after:bottom-0
+            after:h-2 after:w-1/6 after:bg-primary">
+          Here is People’s <span className="text-secondary">Favorite</span>
+        </h1>
+        <p>Let’s choose and have a bit taste of poeple’s favorite. It might be yours too!</p>
+        <div className="flex gap-4">
+            <MainCard data={dataMenu}/>
+        </div>
+      </section>
+      <section className="flex flex-col gap-4 items-center mt-12 px-16">
+        <h1 className="relative text-5xl pb-6
+            after:content-[''] after:absolute after:left-1/3 after:bottom-0
+            after:h-2 after:w-1/6 after:bg-primary text-secondary">
+          Visit Our Store <span className="text-black">in the Spot on the Map Below</span>
+        </h1>
+        <p>You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
+        <div className="w-2/3 bg-contain bg-no-repeat bg-[url('/img/Huge_Global.png')] h-[586px]"></div>
+      </section>
+      <section className="bg-linear-to-b from-[#777C82] to-[#0B0909] w-full flex gap-2 justify-center py-12">
+        <div className="h-[500px] bg-cover bg-no-repeat bg-[url('/img/joko.jpg')] w-[578px]"></div>
+        <div></div>
       </section>
     </div>
   );
