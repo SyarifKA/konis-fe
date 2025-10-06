@@ -7,7 +7,7 @@ import LogoKonis from "../components/LogoKonis"
 
 export default function MainHeader(){
     const pathname = usePathname();
-    if (["/login", "/register"].includes(pathname)) {
+    if (["/login", "/register", "/forgot-pass"].includes(pathname)) {
         return null;
     }
     return(

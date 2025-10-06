@@ -8,7 +8,7 @@ import { FaInstagram } from "react-icons/fa";
 
 export default function MainFooter(){
     const pathname = usePathname();
-    if (["/login", "/register"].includes(pathname)) {
+    if (["/login", "/register", "/forgot-pass"].includes(pathname)) {
         return null;
     }
     return(
