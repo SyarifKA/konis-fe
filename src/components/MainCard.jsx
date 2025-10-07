@@ -20,8 +20,8 @@ export default function MainCard({ data }) {
                 <p className="text-sm">{item.desc}</p>
                 <span>IDR {item.price}</span>
                 <div className="flex w-full gap-2">
-                    <button className="bg-primary w-2/3 py-2 rounded-md">Buy</button>
-                    <button className="flex justify-center w-1/3 text-2xl py-2 border border-primary text-primary rounded-md"><BsCart3 /></button>
+                    <button className="bg-primary w-2/3 py-2 rounded-md cursor-pointer">Buy</button>
+                    <button className="flex justify-center w-1/3 text-2xl py-2 border border-primary text-primary rounded-md cursor-pointer"><BsCart3 /></button>
                 </div>
             </div>
         </div>

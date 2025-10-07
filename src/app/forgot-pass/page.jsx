@@ -1,7 +1,4 @@
 import LogoKonis from "../../components/LogoKonis"
-import LogoGoogle from "../../../public/img/google-icon.png";
-import LogoFb from "../../../public/img/fb-icon.png";
-import Image from "next/image";
 
 export default function ForgotPass(){
     return(
