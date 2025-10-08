@@ -84,6 +84,30 @@ export default function Product(){
         price: 20000
         },
     {
+        image: "/img/menu3.png",
+        title: "Hazelnut Latte",
+        desc: "You can explore the menu that we provide with fun and have their own taste and make your day better.",
+        price: 20000
+        },
+    {
+        image: "/img/menu3.png",
+        title: "Hazelnut Latte",
+        desc: "You can explore the menu that we provide with fun and have their own taste and make your day better.",
+        price: 20000
+        },
+    {
+        image: "/img/menu3.png",
+        title: "Hazelnut Latte",
+        desc: "You can explore the menu that we provide with fun and have their own taste and make your day better.",
+        price: 20000
+        },
+    {
+        image: "/img/menu3.png",
+        title: "Hazelnut Latte",
+        desc: "You can explore the menu that we provide with fun and have their own taste and make your day better.",
+        price: 20000
+        },
+    {
         image: "/img/menu4.png",
         title: "Hazelnut Latte",
         desc: "You can explore the menu that we provide with fun and have their own taste and make your day better.",
@@ -111,8 +135,8 @@ export default function Product(){
             <section className="w-full px-24 flex flex-col gap-6">
                 <h1 className="text-5xl text-black">Our <span className="text-secondary">Product</span></h1>
                 <div className="flex w-full gap-12">
-                    <form className="flex flex-col gap-4 bg-black text-white py-4 px-8 rounded-xl">
-                        <div className="flex justify-between font-semibold">
+                    <form className="flex flex-col gap-4 bg-black h-fit text-white py-4 px-8 rounded-xl">
+                        <div className="flex justify-between font-semibold text-xl">
                             <h1>Filter</h1>
                             <button>Reset Filter</button>
                         </div>
