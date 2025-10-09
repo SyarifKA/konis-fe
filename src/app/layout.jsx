@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`antialiased`}
+        className="antialiased min-h-screen flex flex-col justify-between"
         // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <MainHeader/>

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { CiSearch } from "react-icons/ci";
 import { BsCartCheck } from "react-icons/bs";
 import LogoKonis from "../components/LogoKonis"
+import Link from 'next/link';
 
 export default function MainHeader(){
     const pathname = usePathname();
@@ -33,12 +34,12 @@ export default function MainHeader(){
         }`}>
             <div className="flex gap-4 items-center">
                 <LogoKonis/>
-                <button>
+                <Link href={`/`}>
                     Home
-                </button>
-                <button>
+                </Link>
+                <Link href={`/product`}>
                     Product
-                </button>
+                </Link>
             </div>
             <div className="flex gap-4 items-center">
                 <button className="text-2xl">
