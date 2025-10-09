@@ -70,7 +70,7 @@ export default function PaymentDetails(){
                         <span>Sub Total</span>
                         <span>IDR {Number(subTotal).toLocaleString('id')}</span>
                     </div>
-                    <button className="bg-primary py-2 text-xl rounded-lg mt-4">Checkout</button>
+                    <button className="bg-primary py-2 text-xl rounded-lg mt-4 cursor-pointer">Checkout</button>
                     <div className="flex flex-col gap-4 mt-4 text-gray-500">
                         <span>We Accept</span>
                         <div className="flex flex-wrap gap-6 items-center">
