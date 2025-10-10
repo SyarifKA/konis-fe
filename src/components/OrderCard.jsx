@@ -1,7 +1,12 @@
+'use client'
+
 import Image from "next/image";
 import FlashSale from "./LabelFlashSale";
+import { usePathname } from "next/navigation";
 
 export default function OrderCard({ data }) {
+  const pathname = usePathname()
+  const isDetailPage = pathname.includes("/detail-order");
   return (
     <div className="flex flex-col gap-4">
       {data.map((item, index) => (
@@ -40,13 +45,15 @@ export default function OrderCard({ data }) {
               </div>
             </div>
           </div>
-          <button
-            type="button"
-            className="text-gray-400 hover:text-red-600 text-2xl font-bold cursor-pointer transition-colors"
-            title="Hapus item"
-          >
-            ×
-          </button>
+          {!isDetailPage && (
+            <button
+              type="button"
+              className="text-gray-400 hover:text-red-600 text-2xl font-bold cursor-pointer transition-colors"
+              title="Hapus item"
+            >
+              ×
+            </button>
+          )}
         </div>
       ))}
     </div>

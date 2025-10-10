@@ -74,7 +74,7 @@ export default function HistoryOrderCard({ data }) {
               </div>
             </div>
             <Link
-              href="/detail-product"
+              href="/detail-order"
               className="text-primary underline text-sm mt-3 hover:text-primary/80 w-fit"
             >
               View Order Detail
