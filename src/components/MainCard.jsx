@@ -1,12 +1,13 @@
 import { BsCart3 } from "react-icons/bs";
 import Image from "next/image";
 import FlashSale from '../components/LabelFlashSale'
+import Link from "next/link";
 
 export default function MainCard({ data }) {
   return (
     <>
       {data.map((item, index) => (
-        <div key={index} className="w-[280px] drop-shadow-lg">
+        <Link href={`/product/${item.slug}`} key={index} className="w-[280px] shrink-0 drop-shadow-lg">
             <div className="relative h-[268px] w-full rounded-t-lg overflow-hidden">
                 <Image
                 src={item.image}
@@ -35,7 +36,7 @@ export default function MainCard({ data }) {
                     <button className="flex justify-center w-1/3 text-2xl py-2 border border-primary text-primary rounded-md cursor-pointer"><BsCart3 /></button>
                 </div>
             </div>
-        </div>
+        </Link>
       ))}
     </>
   );

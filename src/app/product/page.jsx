@@ -65,54 +65,89 @@ export default function Product(){
         }
     }
 
-    const dataMenu = [{
+    const dataMenu = [
+    {
+        id: 1,
+        slug: "hazelnut-latte",
         image: "/img/menu1.jpg",
         title: "Hazelnut Latte",
         desc: "You can explore the menu that we provide with fun and have their own taste and make your day better.",
-        price: 20000
+        priceBefore: 40000,
+        price: 20000,
+        flashSale: true,
     },
     {
+        id: 2,
+        slug: "mocha-latte",
         image: "/img/menu2.png",
-        title: "Hazelnut Latte",
-        desc: "You can explore the menu that we provide with fun and have their own taste and make your day better.",
-        price: 20000
-        },
+        title: "Mocha Latte",
+        desc: "A mix of chocolate and espresso to brighten your mood.",
+        priceBefore: 42000,
+        price: 21000,
+        flashSale: true,
+    },
     {
+        id: 3,
+        slug: "caramel-macchiato",
         image: "/img/menu3.png",
-        title: "Hazelnut Latte",
-        desc: "You can explore the menu that we provide with fun and have their own taste and make your day better.",
-        price: 20000
-        },
+        title: "Caramel Macchiato",
+        desc: "Espresso with caramel flavor that gives a sweet touch to your day.",
+        priceBefore: 35000,
+        price: 14000,
+        flashSale: true,
+    },
     {
-        image: "/img/menu3.png",
-        title: "Hazelnut Latte",
-        desc: "You can explore the menu that we provide with fun and have their own taste and make your day better.",
-        price: 20000
-        },
-    {
-        image: "/img/menu3.png",
-        title: "Hazelnut Latte",
-        desc: "You can explore the menu that we provide with fun and have their own taste and make your day better.",
-        price: 20000
-        },
-    {
-        image: "/img/menu3.png",
-        title: "Hazelnut Latte",
-        desc: "You can explore the menu that we provide with fun and have their own taste and make your day better.",
-        price: 20000
-        },
-    {
-        image: "/img/menu3.png",
-        title: "Hazelnut Latte",
-        desc: "You can explore the menu that we provide with fun and have their own taste and make your day better.",
-        price: 20000
-        },
-    {
+        id: 4,
+        slug: "vanilla-latte",
         image: "/img/menu4.png",
-        title: "Hazelnut Latte",
-        desc: "You can explore the menu that we provide with fun and have their own taste and make your day better.",
-        price: 20000
-        }]
+        title: "Vanilla Latte",
+        desc: "Smooth and creamy latte with a hint of vanilla aroma.",
+        priceBefore: 25000,
+        price: 19000,
+        flashSale: true,
+    },
+    {
+        id: 5,
+        slug: "americano",
+        image: "/img/menu4.png",
+        title: "Americano",
+        desc: "Classic black coffee for a strong and bold flavor.",
+        priceBefore: 19000,
+        price: 8000,
+        flashSale: true,
+    },
+    {
+        id: 6,
+        slug: "espresso",
+        image: "/img/menu3.png",
+        title: "Espresso",
+        desc: "Pure espresso shot to keep you energized.",
+        priceBefore: 18500,
+        price: 14000,
+        flashSale: true,
+    },
+    {
+        id: 7,
+        slug: "matcha-latte",
+        image: "/img/menu2.png",
+        title: "Matcha Latte",
+        desc: "Green tea blend with milk for a relaxing taste.",
+        priceBefore: 30000,
+        price: 23000,
+        flashSale: true,
+    },
+    {
+        id: 8,
+        slug: "cold-brew",
+        image: "/img/menu1.jpg",
+        title: "Cold Brew",
+        desc: "Smooth and refreshing coffee brewed cold for hours.",
+        priceBefore: 26000,
+        price: 24000,
+        flashSale: true,
+    }];
+
+        
     return(
         <div className="flex flex-col gap-6">
             <section>
@@ -266,7 +301,7 @@ export default function Product(){
                     </form>
                     <div className="flex flex-col gap-4">
                         <div className="items-start justify-end grid grid-cols-2 2xl:grid-cols-3 gap-6">
-                            <MainCard data={dataMenu}/>
+                            <MainCard  data={dataMenu}/>
                         </div>
                         <div className="flex gap-2 justify-center">
                             <button className="flex justify-center items-center p-2 w-10 rounded-full bg-primary cursor-pointer">1</button>
