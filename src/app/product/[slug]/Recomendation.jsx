@@ -20,12 +20,12 @@ export default function RecommendationSection({ dataMenu }) {
 
   return (
     <section className="flex flex-col gap-6">
-      <h1 className="text-5xl text-black">
+      <h1 className="text-3xl md:text-5xl text-black">
         Recommendation <span className="text-secondary">For You</span>
       </h1>
 
       {/* Grid produk */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid px-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <MainCard data={currentItems} />
       </div>
 

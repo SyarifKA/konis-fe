@@ -150,15 +150,19 @@ export default function Product(){
         
     return(
         <div className="flex flex-col gap-6">
-            <section>
-                <div className="flex items-center px-24 w-full bg-cover bg-no-repeat bg-[url('/img/banner-product1.jpg')] h-[400px] bg-[position:center_-1700px]">
+            <section className="hidden md:flex items-center px-24 w-full bg-cover bg-no-repeat bg-[url('/img/banner-product1.jpg')] h-[400px] md:bg-[position:center_-1700px]">
                     <span className="text-white text-5xl">We Provide Good Coffee and Healthy Meals</span>
-                </div>
+            </section>
+            <section className="mt-24 flex justify-center w-full md:hidden border-b-1 border-gray-300 pb-4">
+                <form action="" className="flex gap-4 items-center">
+                    <input type="text" placeholder="Find Product" className="border focus:outline-primary border-gray-300 py-2 px-4 rounded-xl"/>
+                    <button className="bg-primary p-2 rounded-xl">search</button>
+                </form>
             </section>
             <section className="flex flex-col gap-6 w-full">
-                <div className="flex justify-between px-24">
-                    <h1 className="text-5xl text-black">Today <span className="text-secondary">Promo</span></h1>
-                    <div className="text-black flex gap-2 p-4 drop-shadow-md">
+                <div className="flex justify-between px-12 md:px-24">
+                    <h1 className="text-3xl md:text-5xl text-black">Today <span className="text-secondary">Promo</span></h1>
+                    <div className="text-black hidden md:flex gap-2 p-4 drop-shadow-md">
                       <button onClick={scrollLeft} className="bg-white p-2 rounded-full text-xl"><GoArrowLeft /></button>
                       <button onClick={scrollRight} className="bg-primary p-2 rounded-full text-xl"><GoArrowRight /></button>
                     </div>
@@ -167,10 +171,10 @@ export default function Product(){
                     <Coupon data={dataCoupon}/>
                 </div>
             </section>
-            <section className="w-full px-24 flex flex-col gap-6">
-                <h1 className="text-5xl text-black">Our <span className="text-secondary">Product</span></h1>
+            <section className="w-full px-12 md:px-24 flex flex-col gap-6">
+                <h1 className="text-3xl md:text-5xl text-black">Our <span className="text-secondary">Product</span></h1>
                 <div className="flex w-full gap-12">
-                    <form className="flex flex-col gap-4 bg-black h-fit text-white py-4 px-8 rounded-xl">
+                    <form className="hidden md:flex flex-col gap-4 bg-black h-fit text-white py-4 px-8 rounded-xl">
                         <div className="flex justify-between font-semibold text-xl">
                             <h1>Filter</h1>
                             <button>Reset Filter</button>
@@ -300,7 +304,7 @@ export default function Product(){
                         <button className="bg-primary mt-4 py-2 rounded-lg text-black">Apply Filter</button>
                     </form>
                     <div className="flex flex-col gap-4">
-                        <div className="items-start justify-end grid grid-cols-2 2xl:grid-cols-3 gap-6">
+                        <div className="items-start justify-end grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-6">
                             <MainCard  data={dataMenu}/>
                         </div>
                         <div className="flex gap-2 justify-center">

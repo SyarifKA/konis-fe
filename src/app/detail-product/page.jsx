@@ -47,7 +47,7 @@ export default function DetailProduct(){
         }]
     return(
         <div className='mt-30 px-30 flex flex-col gap-12'>
-            <section className="flex gap-8">
+            <section className="flex flex-col gap-8">
                 <div className='flex flex-col gap-4 w-full max-w-[500px]'>
                     <div className="h-[400px] relative">
                         <Image
