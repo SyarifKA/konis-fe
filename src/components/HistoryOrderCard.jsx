@@ -22,7 +22,7 @@ export default function HistoryOrderCard({ data }) {
           key={index}
           className="flex flex-wrap md:flex-nowrap gap-6 p-4 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-all"
         >
-          <div className="w-24 h-24 flex-shrink-0">
+          <div className="w-24 h-24 hidden md:flex flex-shrink-0">
             <Image
               src={item.image}
               alt={`order-${index}`}
@@ -38,14 +38,14 @@ export default function HistoryOrderCard({ data }) {
                   <TbCup />
                   <span>No. Order</span>
                 </div>
-                <span className="text-lg font-semibold">{item.orderNum}</span>
+                <span className="text-md md:text-lg font-semibold">{item.orderNum}</span>
               </div>
               <div className="flex flex-col gap-1">
                 <div className="flex items-center gap-2 text-gray-500 text-sm">
                   <TbCup />
                   <span>Date</span>
                 </div>
-                <span className="text-lg font-semibold">{item.date}</span>
+                <span className="text-md md:text-lg font-semibold">{item.date}</span>
               </div>
               <div className="flex flex-col gap-1">
                 <div className="flex items-center gap-2 text-gray-500 text-sm">
@@ -56,6 +56,7 @@ export default function HistoryOrderCard({ data }) {
                   {Number(item.price).toLocaleString("id-ID", {
                     style: "currency",
                     currency: "IDR",
+                    maximumFractionDigits: 0,
                   })}
                 </span>
               </div>
@@ -65,7 +66,7 @@ export default function HistoryOrderCard({ data }) {
                   <span>Status</span>
                 </div>
                 <span
-                  className={`px-4 py-1 rounded-full text-sm font-semibold text-center w-fit ${getStatusStyle(
+                  className={`px-4 py-1 rounded-full text-xs md:text-sm font-semibold text-center w-fit ${getStatusStyle(
                     item.status
                   )}`}
                 >

@@ -15,7 +15,7 @@ export default function OrderCard({ data }) {
           className="flex justify-between items-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-4"
         >
           <div className="flex gap-4 items-center">
-            <div className="relative w-[150px] h-[150px] rounded-md overflow-hidden">
+            <div className="relative md:w-[150px] md:h-[150px] w-[100px] h-[100px] rounded-md overflow-hidden">
               <Image
                 src={item.image}
                 alt={item.title}
@@ -26,7 +26,7 @@ export default function OrderCard({ data }) {
 
             <div className="flex flex-col gap-2">
               <div className="w-fit">
-                <FlashSale className="text-xs" />
+                <FlashSale />
               </div>
               <h2 className="font-semibold text-lg">{item.title}</h2>
               <div className="flex gap-2 text-sm text-gray-600">

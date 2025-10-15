@@ -42,17 +42,83 @@ export default function PaymentDetails(){
     const tax = Math.round(orderTotal * 0.1);
     const subTotal = orderTotal + deliveryFee + tax;
     return(
-        <div className="flex flex-col gap-6 px-30 mt-30">
-            <h1 className="text-5xl font-semibold">Payment Details</h1>
-            <section className="flex gap-8">
-                <div className="flex flex-col gap-2 w-1/2">
-                    <div className="flex justify-between">
-                        <span className="text-xl">You Order</span>
-                        <button className="bg-primary px-4 py-2 text-black rounded-lg">+ Add Menu</button>
+        <div className="flex flex-col gap-6 px-6 md:px-30 mt-30">
+            <h1 className="text-3xl md:text-5xl font-semibold">Payment Details</h1>
+            <div className="flex gap-8 md:gap-16 md:flex-row flex-col">      
+                <section className="flex flex-col gap-8 md:w-1/2">
+                    <div className="flex flex-col gap-2 w-full">
+                        <div className="flex justify-between">
+                            <span className="text-xl">You Order</span>
+                            <button className="bg-primary px-4 py-2 text-black rounded-lg">+ Add Menu</button>
+                        </div>
+                        <OrderCard data={dataOrder}/>
                     </div>
-                    <OrderCard data={dataOrder}/>
-                </div>
-                <div className="flex flex-col gap-2 w-1/2">
+                    <div className="flex flex-col gap-6 w-full">
+                        <h1 className="text-3xl">Payment Info & Delivery</h1>
+                        <form className="flex flex-col gap-6">
+                            <div className="flex flex-col gap-2">
+                                <label htmlFor="email" className="text-sm font-semibold text-gray-800">
+                                Email
+                                </label>
+                                <input
+                                id="email"
+                                type="email"
+                                placeholder="Enter Your Email"
+                                className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                                />
+                            </div>
+                            <div className="flex flex-col gap-2">
+                                <label htmlFor="fullName" className="text-sm font-semibold text-gray-800">
+                                Full Name
+                                </label>
+                                <input
+                                id="fullName"
+                                type="text"
+                                placeholder="Enter Your Full Name"
+                                className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                                />
+                            </div>
+                            <div className="flex flex-col gap-2">
+                                <label htmlFor="address" className="text-sm font-semibold text-gray-800">
+                                Address
+                                </label>
+                                <input
+                                id="address"
+                                type="text"
+                                placeholder="Enter Your Address"
+                                className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                                />
+                            </div>
+                            <div className="flex flex-col gap-2">
+                                <span className="text-sm font-semibold text-gray-800">Delivery?</span>
+                                <div className="flex flex-wrap gap-4">
+                                {delivery.map((del) => (
+                                    <label
+                                    key={del}
+                                    className={`px-6 py-3 rounded-lg border-2 cursor-pointer transition-all select-none ${
+                                        selectedDelivery === del
+                                        ? 'border-primary bg-primary text-white shadow-sm'
+                                        : 'border-gray-300 hover:border-primary hover:bg-gray-50'
+                                    }`}
+                                    >
+                                    <input
+                                        type="checkbox"
+                                        value={del}
+                                        checked={selectedDelivery === del}
+                                        onChange={() =>
+                                            setSelectedDelivery(selectedDelivery === del ? '' : del)
+                                        }
+                                        className="hidden"
+                                        />
+                                    {del}
+                                    </label>
+                                ))}
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                <section className="flex flex-col gap-2 w-full md:w-1/2">
                     <span className="text-xl">Total</span>
                     <div className="flex justify-between text-lg">
                         <span>Order</span>
@@ -75,84 +141,20 @@ export default function PaymentDetails(){
                         <span>We Accept</span>
                         <div className="flex flex-wrap gap-6 items-center">
                             {["bca", "bri", "dana", "gopay", "ovo", "paypal"].map((bank) => (
-                            <Image
+                                <Image
                                 key={bank}
                                 src={`/img/${bank}.png`}
                                 alt={bank}
                                 width={40}
                                 height={30}
                                 className="object-contain"
-                            />
+                                />
                             ))}
                         </div>
                         <span>*Get Discount if you pay with Bank Central Asia</span>
                     </div>
-                </div>
-            </section>
-            <section className="flex flex-col gap-6 md:w-1/2">
-                <h1 className="text-3xl">Payment Info & Delivery</h1>
-                <form className="flex flex-col gap-6">
-                    <div className="flex flex-col gap-2">
-                        <label htmlFor="email" className="text-sm font-semibold text-gray-800">
-                        Email
-                        </label>
-                        <input
-                        id="email"
-                        type="email"
-                        placeholder="Enter Your Email"
-                        className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                        />
-                    </div>
-                    <div className="flex flex-col gap-2">
-                        <label htmlFor="fullName" className="text-sm font-semibold text-gray-800">
-                        Full Name
-                        </label>
-                        <input
-                        id="fullName"
-                        type="text"
-                        placeholder="Enter Your Full Name"
-                        className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                        />
-                    </div>
-                    <div className="flex flex-col gap-2">
-                        <label htmlFor="address" className="text-sm font-semibold text-gray-800">
-                        Address
-                        </label>
-                        <input
-                        id="address"
-                        type="text"
-                        placeholder="Enter Your Address"
-                        className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                        />
-                    </div>
-                    <div className="flex flex-col gap-2">
-                        <span className="text-sm font-semibold text-gray-800">Delivery?</span>
-                        <div className="flex flex-wrap gap-4">
-                        {delivery.map((del) => (
-                            <label
-                            key={del}
-                            className={`px-6 py-3 rounded-lg border-2 cursor-pointer transition-all select-none ${
-                                selectedDelivery === del
-                                ? 'border-primary bg-primary text-white shadow-sm'
-                                : 'border-gray-300 hover:border-primary hover:bg-gray-50'
-                            }`}
-                            >
-                            <input
-                                type="checkbox"
-                                value={del}
-                                checked={selectedDelivery === del}
-                                onChange={() =>
-                                setSelectedDelivery(selectedDelivery === del ? '' : del)
-                                }
-                                className="hidden"
-                            />
-                            {del}
-                            </label>
-                        ))}
-                        </div>
-                    </div>
-                </form>
-            </section>
+                </section>
+            </div>
         </div>
     )
 }

@@ -43,7 +43,7 @@ export default function HistoryOrder() {
         {/* Left Section */}
         <div className="flex flex-col gap-6 w-full md:w-2/3">
           {/* Filter & Date */}
-          <div className="flex flex-col sm:flex-row justify-between gap-4">
+          <div className="flex flex-col-reverse sm:flex-row justify-between gap-4">
             <div className="flex items-center bg-gray-100 rounded-lg overflow-hidden">
               {["On Progress", "Sending Goods", "Finish Order"].map((tab) => (
                 <button

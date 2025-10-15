@@ -27,11 +27,11 @@ export default function DetailOrder(){
         delivery: 'Dine In'
     }]
     return(
-        <div className="flex flex-col gap-6 px-8 md:px-30 mt-20 md:mt-30">
-            <h1 className="text-5xl font-semibold">Order #12354-09893</h1>
+        <div className="flex flex-col gap-4 md:gap-6 px-8 md:px-30 mt-20 md:mt-30">
+            <h1 className="text-3xl md:text-5xl font-semibold">Order #12354-09893</h1>
             <span className="text-gray-600">21 March 2023 at 10:30 AM</span>
-            <section className="flex gap-6">
-                <div className="flex flex-col gap-6 w-1/2">
+            <section className="flex flex-col md:flex-row gap-6">
+                <div className="flex flex-col gap-6 w-full md:w-1/2">
                     <h2 className="text-2xl font-medium">Order Information</h2>
                     <div className="flex justify-between border-b border-gray-300 text-lg pb-4">
                         <div className="flex items-center gap-2">
@@ -85,7 +85,7 @@ export default function DetailOrder(){
                         <span className="font-semibold text-xl text-primary">IDR 40.000</span>
                     </div>
                 </div>
-                <div className="flex flex-col w-1/2">
+                <div className="flex flex-col w-full md:w-1/2">
                     <h2 className="text-2xl font-medium">You Order</h2>
                     <OrderCard data={dataOrder}/>
                 </div>

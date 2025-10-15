@@ -13,19 +13,19 @@ export default function MainHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  if (["/login", "/register", "/forgot-pass"].includes(pathname)) {
-    return null;
-  }
-
+  
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  return (
+      const handleScroll = () => {
+          setIsScrolled(window.scrollY > 50);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+    
+    if (["/login", "/register", "/forgot-pass"].includes(pathname)) {
+      return null;
+    }
+    return (
     <header
       className={`fixed z-50 top-0 w-full flex justify-between items-center py-4 px-6 md:px-20 text-lg text-white transition-all duration-500 ${
         isScrolled ? "bg-black shadow-md" : "bg-[#0B090921]"
